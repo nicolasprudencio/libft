@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:55:06 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/02 19:27:17 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/02 20:33:01 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {	
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*t;
 
 	i = 0;
