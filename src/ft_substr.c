@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 21:03:06 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/11 22:26:08 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/12 21:18:21 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*str;
 	size_t			s_size;
 	size_t			i;
-	
+
 	if (!s)
 		return (NULL);
 	s_size = ft_strlen(s);
