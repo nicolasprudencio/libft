@@ -3,23 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 20:33:30 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/09 22:10:40 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/15 19:57:29 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
-
-int	ft_isdigit(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
 
 int	ft_atoi(const char *nptr)
 {	
@@ -47,12 +40,3 @@ int	ft_atoi(const char *nptr)
 		return (result * -1);
 	return (result);
 }
-
-// int	main(void)
-// {
-// 	char	s[] = " \t-1234ab567";
-
-// 	printf("atoi: %d\n\n", atoi(s));
-// 	printf("ft: %d\n", ft_atoi(s));
-// 	return (0);
-// }
