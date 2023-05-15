@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:00:13 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/09 20:44:26 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:46:51 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <bsd/string.h>
 
 static int	ft_mycmp(const char *s1, const char *s2, size_t n)
 {
