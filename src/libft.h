@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:14:18 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/15 19:28:18 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/05/16 12:06:42 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
+char	*ft_itoa(int n);
 
 #endif
