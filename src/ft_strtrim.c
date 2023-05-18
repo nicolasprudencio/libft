@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:11:59 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/18 18:49:19 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:40:36 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		end;
 	int		start;
-	int		i;
 	char	*str;
 	int		size;
 
-	i = 0;
 	end = ft_strlen(s1);
 	start = 0;
 	if (!s1)
