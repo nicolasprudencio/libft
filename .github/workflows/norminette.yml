@@ -1,4 +1,4 @@
-name: norminette
+name: all yml
 
 on:
   push:
@@ -23,5 +23,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip setuptools
           python -m pip install norminette 
-      - name: Lint with norminette
+      - name: Test with norminette
         run: norminette
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src
+    steps:
+      - uses: actions/checkout@v2
+      - name: make
+        run: make
