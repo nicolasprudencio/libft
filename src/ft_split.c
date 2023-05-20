@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split copy.c                                    :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:37:55 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/19 21:01:31 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/20 12:55:24 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,13 @@ static char	*ft_strmalloc(char **str, char c)
 	while ((*str)[s_len] == c)
 		(*str)++;
 	while ((*str)[s_len] != c && (*str)[s_len])
-	{	
 		s_len++;
-	}
 	str_cpy = malloc((s_len + 1) * sizeof(char));
 	if (!str_cpy)
 		return (NULL);
 	ft_strlcpy(str_cpy, *str, s_len + 1);
-	if (**str != '\0')
-	{
-		while (**str != c && **str != 0)
-			(*str)++;
-		if (**str != 0)
-			*str += 1;
-	}
+	while (**str != c && **str != 0)
+		(*str)++;
 	return (str_cpy);
 }
 
