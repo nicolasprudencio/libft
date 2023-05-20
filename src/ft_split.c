@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split copy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:37:55 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/18 21:53:06 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/19 21:01:31 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// char **ft_split(char const *s, char c)
-// {
+#include "libft.h"
 
-// }
-
-#include <stdio.h>
-
-static int	word_cnt(char *s, char c)
+static int	word_cnt(const char *s, char c)
 {
 	int	words;
 	int	control;
@@ -38,29 +33,48 @@ static int	word_cnt(char *s, char c)
 	return (words);
 }
 
-char	**ft_split(char const *s, char c)
-{
-	int		s_size;
-	char	**p;
-	int		i;
+static char	*ft_strmalloc(char **str, char c)
+{	
+	int		s_len;
+	char	*str_cpy;
 
-	s_size = ft_strlen(s);
-	p = ft_calloc((word_cnt(s, c) + 1) * sizeof(char *));
-	if (!*s || !p)
+	s_len = 0;
+	while ((*str)[s_len] == c)
+		(*str)++;
+	while ((*str)[s_len] != c && (*str)[s_len])
+	{	
+		s_len++;
+	}
+	str_cpy = malloc((s_len + 1) * sizeof(char));
+	if (!str_cpy)
 		return (NULL);
-	
-	
+	ft_strlcpy(str_cpy, *str, s_len + 1);
+	if (**str != '\0')
+	{
+		while (**str != c && **str != 0)
+			(*str)++;
+		if (**str != 0)
+			*str += 1;
+	}
+	return (str_cpy);
 }
 
-int	main(void)
+char	**ft_split(char const *s, char c)
 {
-	int	*ponteiro;
-	int	**ponteiro_do_ponteiro;
-	int	valor;
+	char	**str_arr;
+	int		words;
+	int		i;
 
-	valor = 50;
-	ponteiro = &valor;
-	ponteiro_do_ponteiro = &ponteiro;
-	printf("%d\n", **ponteiro_do_ponteiro);
-	return (0);
+	words = word_cnt(s, c);
+	str_arr = malloc((words + 1) * sizeof(char *));
+	i = 0;
+	if (!str_arr)
+		return (NULL);
+	while (i < words)
+	{	
+		str_arr[i] = ft_strmalloc((char **)&s, c);
+		i++;
+	}
+	str_arr[i] = NULL;
+	return (str_arr);
 }
