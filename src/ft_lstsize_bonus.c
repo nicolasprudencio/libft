@@ -6,13 +6,13 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:25:56 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/22 18:11:10 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/22 19:33:27 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {	
 	int	lst_len;
 
