@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:25:11 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/09 15:51:45 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/22 11:44:34 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	str = (const unsigned char *)s;
 	c_char = (unsigned char) c;
-	if (!n || !s)
-		return (NULL);
 	while (n--)
 	{
 		if (*str == c_char)

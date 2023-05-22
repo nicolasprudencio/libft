@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 18:06:59 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/20 17:38:27 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:39:12 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*str;
+	size_t	size_max;
 	size_t	i;
 
 	i = 0;
-	if (nmemb * size / size != nmemb)
+	size_max = nmemb * size;
+	if (size_max / size != nmemb)
 		return (NULL);
-	str = malloc(nmemb * size);
+	str = malloc(size_max);
 	if (!str)
 		return (NULL);
-	while (i < nmemb * size)
-	{
-		str[i] = 0;
-		i++;
-	}
+	while (i < size_max)
+		str[i++] = 0;
 	return (str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:04:28 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/12 21:17:48 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/22 14:57:42 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	char	*str;
 
+	if (!s1)
+		return (NULL);
 	i = 0;
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2) + 1;

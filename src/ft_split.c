@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:37:55 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/20 21:12:17 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/22 19:29:19 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ char	**ft_split(char const *s, char c)
 	int		words;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	words = word_cnt(s, c);
 	str_arr = malloc((words + 1) * sizeof(char *));
 	i = 0;

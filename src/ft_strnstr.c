@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:00:13 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/20 18:05:35 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/22 14:55:54 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {	
 	size_t	l_size;
 
+	if (!len && !big)
+		return (0);
 	l_size = ft_strlen(little);
 	if (!l_size)
 		return ((char *)big);
