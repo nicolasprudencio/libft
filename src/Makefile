@@ -16,25 +16,21 @@ ft_atoi.c ft_calloc.c ft_putchar_fd.c \
  ft_split.c
 BONUS_SRC = \
 ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-ft_lstlast_bonus.c ft_lstadd_back.c ft_lstdelone_bonus.c
+ft_lstlast_bonus.c ft_lstadd_back.c ft_lstdelone_bonus.c \
+ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 OBJS = $(SRCS:.c=.o)
-BONUS_OBJ = $(BONUS_SRC:.c=.o);
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 FLAGS = -Werror -Wextra -Wall
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(BONUS_OBJ)
-	ar -rcs -o $(NAME) $^
+$(NAME): $(OBJS)
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $(SRCS) $(BONUS_SRC)
+	$(CC) $(FLAGS) -c $<
+	ar -rcs -o $(NAME) $@
 
-bonus: $(NAME) $(BONUS_OBJ)
-	ar -rcs $(NAME) $(BONUS_OBJ)
-
-so:
-	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRCS) $(BONUS_SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJ)
+bonus: $(BONUS_OBJ)
 
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJ)
