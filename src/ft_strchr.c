@@ -6,7 +6,7 @@
 /*   By: nprudenc <nprudenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:19:31 by nprudenc          #+#    #+#             */
-/*   Updated: 2023/05/20 18:07:25 by nprudenc         ###   ########.fr       */
+/*   Updated: 2023/05/23 13:36:08 by nprudenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (!c)
+	if (!(unsigned char)c)
 		return ((char *)s);
 	return (NULL);
 }
